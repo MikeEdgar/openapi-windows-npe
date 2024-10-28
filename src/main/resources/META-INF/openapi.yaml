@@ -1,0 +1,16 @@
+openapi: 3.0.3
+info:
+  title: Account Management Services API
+  description: 'Account Management Services OpenAPI v3 documentation'
+servers:
+  - url: https://dev.acme.com
+    description: Development Acme server
+security:
+  - BasicAuth: []
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication
+

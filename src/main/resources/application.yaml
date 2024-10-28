@@ -1,0 +1,22 @@
+
+quarkus:
+  package:
+    jar:
+      enabled: true
+      type: uber-jar
+  smallrye-openapi:
+    path: /q/swagger-openapi
+    store-schema-directory: target/generated-openapi/
+    info-contact-email: joe.tester@acme.com
+    servers: https://dev.acme.com
+    # This is not working
+    # additional-docs-directory: config/
+    ignore-static-document: false
+  swagger-ui:
+    always-include: true
+    path: /q/swagger-ui
+    urls-primary-name: http
+    urls:
+      default: /q/swagger-openapi
+      local: /q/swagger-openapi
+      http: /q/swagger-openapi

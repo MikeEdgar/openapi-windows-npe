@@ -1,0 +1,24 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    name: build
+
+    steps:
+      - uses: actions/checkout@v4
+        name: checkout
+
+      - uses: actions/setup-java@v4
+        name: set up jdk 17
+        with:
+          distribution: 'temurin'
+          java-version: "17"
+
+      - name: build with maven
+        run: mvn -B package

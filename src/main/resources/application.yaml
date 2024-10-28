@@ -6,7 +6,7 @@ quarkus:
       type: uber-jar
   smallrye-openapi:
     path: /q/swagger-openapi
-    store-schema-directory: target/generated-openapi/
+    #store-schema-directory: target/generated-openapi/
     info-contact-email: joe.tester@acme.com
     servers: https://dev.acme.com
     # This is not working

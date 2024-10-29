@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
         name: checkout
         with:
-          repository: https://github.com/MikeEdgar/smallrye-open-api
+          repository: MikeEdgar/smallrye-open-api
           ref: main
           path: smallrye-open-api
 

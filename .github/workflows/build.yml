@@ -11,14 +11,26 @@ jobs:
     name: build
 
     steps:
-      - uses: actions/checkout@v4
-        name: checkout
-
       - uses: actions/setup-java@v4
         name: set up jdk
         with:
           distribution: 'temurin'
           java-version: "21"
 
+      - uses: actions/checkout@v4
+        name: checkout
+        with:
+          repository: https://github.com/MikeEdgar/smallrye-open-api
+          ref: main
+          path: smallrye-open-api
+
+      - name: build smallrye-open-api
+        run: mvn -B -f smallrye-open-api/pom.xml install -pl extensions/jax-rs -am -DskipTests
+
+      - uses: actions/checkout@v4
+        name: checkout
+        with:
+          path: reproducer
+
       - name: build with maven
-        run: mvn -B package
+        run: mvn -B -f reproducer/pom.xml package

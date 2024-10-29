@@ -20,6 +20,16 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>io.smallrye</groupId>
+                <artifactId>smallrye-open-api-core</artifactId>
+                <version>4.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>io.smallrye</groupId>
+                <artifactId>smallrye-open-api-jaxrs</artifactId>
+                <version>4.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
                 <groupId>${quarkus.platform.group-id}</groupId>
                 <artifactId>${quarkus.platform.artifact-id}</artifactId>
                 <version>${quarkus.platform.version}</version>

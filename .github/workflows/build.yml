@@ -21,7 +21,7 @@ jobs:
         name: checkout
         with:
           repository: MikeEdgar/smallrye-open-api
-          ref: main
+          ref: fix-static-doc-leak
           path: smallrye-open-api
 
       - name: build smallrye-open-api

@@ -11,7 +11,7 @@ quarkus:
     servers: https://dev.acme.com
     # This is not working
     # additional-docs-directory: config/
-    ignore-static-document: true
+    ignore-static-document: false
   swagger-ui:
     always-include: true
     path: /q/swagger-ui

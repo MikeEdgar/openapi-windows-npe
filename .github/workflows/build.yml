@@ -25,7 +25,7 @@ jobs:
           path: smallrye-open-api
 
       - name: build smallrye-open-api
-        run: mvn -B -f smallrye-open-api/pom.xml install -pl extensions/jax-rs -am -DskipTests
+        run: mvn -B -f smallrye-open-api/pom.xml install -pl extension-jaxrs -am -DskipTests
 
       - uses: actions/checkout@v4
         name: checkout

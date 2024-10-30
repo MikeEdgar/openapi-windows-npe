@@ -20,15 +20,15 @@ jobs:
       - name: Support longpaths on Windows
         run: git config --global core.longpaths true
           
-      - uses: actions/checkout@v4
-        name: checkout smallrye-open-api
-        with:
-          repository: MikeEdgar/smallrye-open-api
-          ref: fix-static-doc-leak
-          path: smallrye-open-api
-
-      - name: build smallrye-open-api
-        run: mvn -B -f smallrye-open-api/pom.xml install -pl extension-jaxrs -am -DskipTests
+#     - uses: actions/checkout@v4
+#       name: checkout smallrye-open-api
+#       with:
+#         repository: MikeEdgar/smallrye-open-api
+#         ref: fix-static-doc-leak
+#         path: smallrye-open-api
+#
+#     - name: build smallrye-open-api
+#       run: mvn -B -f smallrye-open-api/pom.xml install -pl extension-jaxrs -am -DskipTests
 
       - uses: actions/checkout@v4
         name: checkout quarkus

@@ -17,6 +17,9 @@ jobs:
           distribution: 'temurin'
           java-version: "22"
 
+      - name: Support longpaths on Windows
+        run: git config --global core.longpaths true
+          
       - uses: actions/checkout@v4
         name: checkout smallrye-open-api
         with:

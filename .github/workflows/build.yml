@@ -38,8 +38,11 @@ jobs:
           path: quarkus
 
       - name: build quarkus
-        run: mvn -B -f quarkus/pom.xml install -pl bom/application,extensions/smallrye-openapi/deployment -am -DskipTests
-        
+        run: |
+          cd quarkus
+          ./mvnw -B install -pl bom/application,extensions/smallrye-openapi/deployment -am -DskipTests
+          cd ..
+
       - uses: actions/checkout@v4
         name: checkout reproducer
         with:

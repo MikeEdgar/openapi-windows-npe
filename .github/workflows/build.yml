@@ -18,7 +18,7 @@ jobs:
           java-version: "22"
 
       - uses: actions/checkout@v4
-        name: checkout
+        name: checkout smallrye-open-api
         with:
           repository: MikeEdgar/smallrye-open-api
           ref: fix-static-doc-leak
@@ -28,9 +28,19 @@ jobs:
         run: mvn -B -f smallrye-open-api/pom.xml install -pl extension-jaxrs -am -DskipTests
 
       - uses: actions/checkout@v4
-        name: checkout
+        name: checkout quarkus
+        with:
+          repository: MikeEdgar/quarkus
+          ref: lock-free-url-stream
+          path: quarkus
+
+      - name: build quarkus
+        run: mvn -B -f quarkus/pom.xml install -pl bom/application,extensions/smallrye-openapi/deployment -am -DskipTests
+        
+      - uses: actions/checkout@v4
+        name: checkout reproducer
         with:
           path: reproducer
 
-      - name: build with maven
+      - name: build reproducer
         run: mvn -B -f reproducer/pom.xml package

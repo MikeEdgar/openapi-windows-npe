@@ -10,7 +10,7 @@ quarkus:
     info-contact-email: joe.tester@acme.com
     servers: https://dev.acme.com
     # This is not working
-    additional-docs-directory: META-INF/openapi
+    # additional-docs-directory: META-INF/openapi
     ignore-static-document: false
   swagger-ui:
     always-include: true
